@@ -7,10 +7,6 @@ This is accomplished in only eight tiny annoying-to-solder parts.
 
 Circuit is entirely analog so you only get the Gerbers.
 
-## WARNING: STILL UNDER CONSTRUCTION
-
-While v1 works, it hasn't been thoroughly tested yet, and is known to have problems that will be corrected for v2.
-
 ## Schematic
 
 ![](schematic.png)
@@ -46,15 +42,14 @@ For the aforementioned boards, installation requires three or four wires:
 
 **NUS-CPU-05 through NUS-CPU-09 boards need a separate DAC to work with this mod.** Nintendo integrated NTSC video encoding onto a
 single chip (AVDC-NUS and MAV-NUS) so there are no more analog RGB outputs. You will either need to use an external DAC or try
-a different mod (Tim Worthington's N64RGB or similar) to get RGB out of those systems.
+a different mod (Tim Worthington's N64RGB or [some shitty version of it](https://github.com/wurthless-elektroniks/rugby64)) to get RGB out of those systems.
 
-**And don't forget to put some kapton tape (or other insulator) under the board before you solder it in!**
+**It's recommended, but not required, to put insulating material under the PCB before you solder it in.**
 
-## Bugs
+After installation, test everything and make sure it works. If you get RGB output, hooray for you. If not, something is wrong.
 
-v1-specific:
-- The power stabilization capacitor is a 0403 at 0.1uF, which will probably not hold up long term. This will be changed to a 0603 10uF on v2.
-- The THS7374 gets uncomfortably hot during operation. I'm not sure if this is normal or not, but will investigate the cause.
+It's very important to check the temperature of the THS7374 amp when the circuit is running. If it's blistering hot, then there's
+a short circuit on one of the outputs, most likely the CSYNC pin. Remedy this issue immediately to limit damage to the amp (and your N64).
 
 ## License
 
